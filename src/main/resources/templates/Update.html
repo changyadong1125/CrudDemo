@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+
+<!--    <base th:href="@{/}"/>-->
+</head>
+<body>
+<form method="post" action="http://localhost:8080/crud/update"  enctype="multipart/form-data">
+    <input type="hidden" name="id" th:value="${studentVo.id}">
+    学生姓名：<input type="text" name="name" th:value="${studentVo.name}">
+    <br>
+    出生日期：<input type="date" name="birthday" th:value="${studentVo.birthday}">
+    <br>
+    个人头像： <img th:src="@{/picture/} + ${studentVo.picture}"  style="width: 100px; height: 100px;">
+    <br>
+    <input type="file" name="pictureFile" th:value="${studentVo.picture}">
+    <br>
+    兴趣爱好：<label><input type="checkbox" name="habby" value="足球" th:checked="${studentVo.habby.contains('足球')}">足球</label>
+    <label><input type="checkbox" name="habby" value="篮球" th:checked="${studentVo.habby.contains('篮球')}">篮球</label>
+    <label><input type="checkbox" name="habby" value="排球" th:checked="${studentVo.habby.contains('排球')}">排球</label>
+    <label><input type="checkbox" name="habby" value="乒乓球" th:checked="${studentVo.habby.contains('乒乓球')}">乒乓球</label>
+    <label><input type="checkbox" name="habby" value="音乐" th:checked="${studentVo.habby.contains('音乐')}">音乐</label>
+    <label><input type="checkbox" name="habby" value="舞蹈" th:checked="${studentVo.habby.contains('舞蹈')}">舞蹈</label>
+    <br>
+    手机号码：<input type="text" name="phone"  th:value="${studentVo.phone}" >
+    <br>
+    家庭地址：<input type="text" name="address"  th:value="${studentVo.address}">
+    <br>
+    自我介绍：<input type="text" name="info"  th:value="${studentVo.info}">
+    <br>
+    <input type="submit" value="修改">
+</form>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: crudDemo
+  datasource:
+    url: jdbc:mysql://localhost:3306/aa_crude
+    username: root
+    password: 190325
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#  thymeleaf:
+#    prefix: classpath:/templates/
+#    suffix: .html
+  jackson:
+    date-format: yyyy-MM-dd
+  servlet:
+    multipart:
+      max-file-size: 20MB
+
+mybatis-plus:
+  configuration:
+    use-generated-keys: true
+    key-property: id

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <base th:href="@{/}"/>
+</head>
+<body>
+<h1 align="center">学生列表</h1>
+
+<table align="center" border="1" style="color: darkgreen">
+    <tr >
+        <td>ID</td>
+        <td>姓名</td>
+        <td>生日</td>
+        <td>头像</td>
+        <td>爱好</td>
+        <td>手机</td>
+        <td>地址</td>
+        <td>自我介绍</td>
+        <td align="center">操作</td>
+    </tr>
+    <tr th:each="student:${students}">
+        <td th:text="${student.id}">ID</td>
+        <td th:text="${student.name}">姓名</td>
+        <td th:text="${student.birthday}">生日</td>
+        <td>
+            <img th:src="@{/picture/}+${student.picture}"  style="width: 100px; height: 100px;">
+<!--            <img src="/src/main/resources/picture/3e8ee2f465b2481a99a2c8e59037ef10.jpg" style="width: 100px; height: 100px;" />-->
+        </td>
+        <td th:text="${student.habby}">爱好</td>
+        <td th:text="${student.phone}">手机</td>
+        <td th:text="${student.address}">地址</td>
+        <td th:text="${student.info}">自我介绍</td>
+        <td align="center">
+            <a th:href="@{crud/update/}+${student.id}">[修改]</a>
+            <a th:href="@{crud/delete/}+${student.id}">[删除]</a>
+        </td>
+    </tr>
+    <tr>
+        <th colspan="9">
+            <a  href="crud/toAdd">添加学生</a>
+        </th>
+    </tr>
+</table>
+
+</body>
+</html>

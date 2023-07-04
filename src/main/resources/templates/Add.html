@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <base th:href="@{/}"/>
+</head>
+<body>
+<!-- enctype="multipart/form-data"  -->
+<form method="post" action="crud/add" enctype="multipart/form-data" >
+    <input type="hidden" name="id">
+    学生姓名：<input type="text" name="name">
+    <br>
+<!--    出生日期：<input type="date" name="birthday">-->
+    出生日期：<input type="text" name="birthday">
+    <br>
+    个人头像：<input type="file" name="pictureFile">
+    <br>
+    兴趣爱好：<label><input type="checkbox" name="hobby" value="足球">足球</label>
+    <label><input type="checkbox" name="habby" value="篮球">篮球</label>
+    <label><input type="checkbox" name="habby" value="排球">排球</label>
+    <label><input type="checkbox" name="habby" value="乒乓球">乒乓球</label>
+    <label><input type="checkbox" name="habby" value="音乐">音乐</label>
+    <label><input type="checkbox" name="habby" value="舞蹈">舞蹈</label>
+    <br>
+    手机号码：<input type="text" name="phone">
+    <br>
+    家庭地址：<input type="text" name="address">
+    <br>
+    自我介绍：<input type="text" name="info">
+    <br>
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>
